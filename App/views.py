@@ -24,5 +24,9 @@ def add_product(request):
         return render(request,'add.html')
         
 # view the product individually
+def product(request,product_id):
+    product=Product.objects.get(id=product_id)
+    if product!= None:
+        return render(request,'edit.html',{'product':product})
 
 # delete product
